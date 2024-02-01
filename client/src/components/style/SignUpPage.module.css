@@ -1,0 +1,16 @@
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.formSingUp {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.btnSingUp {
+    background: #d8d3d3;
+    margin-top: 20px;
+}

@@ -48,5 +48,8 @@ module.exports = {
     'no-console': 'off',
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     '@typescript-eslint/no-non-null-assertion': 'off',
+    ' eslint-disable react/function-component-definition': 'off',
+    'eslint-disable arrow-body-style': 'off',
+    'eslint-disable @typescript-eslint/explicit-function-return-type': 'off',
   },
 };
