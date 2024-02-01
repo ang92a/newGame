@@ -7,9 +7,9 @@ const configJWT = require("../../middleware/configJWT");
 router.post("/sign-in", async (req, res) => {
   let user;
   try {
-    const { name, password } = req.body;
+    const { email, password } = req.body;
 
-    user = await User.findOne({ where: { name } });
+    user = await User.findOne({ where: { email } });
     if (!user) {
       res.json({ message: "Такого пользователя нет или пароль неверный" });
       return;
@@ -20,7 +20,7 @@ router.post("/sign-in", async (req, res) => {
       return;
     }
     const { accessToken, refreshToken } = generateTokens({
-      user: { id: user.id, name: user.name, img: user.img },
+      user: { id: user.id },
     });
 
     // устанавливаем куки
@@ -32,7 +32,7 @@ router.post("/sign-in", async (req, res) => {
       maxAge: 1000 * 60 * 60 * 12,
       httpOnly: true,
     });
-    res.json({ message: "успех" });
+    res.json({ message: "успешно", user });
   } catch ({ message }) {
     res.json({ message });
   }
@@ -41,30 +41,21 @@ router.post("/sign-in", async (req, res) => {
 router.post("/sign-up", async (req, res) => {
   let user;
   try {
-    const { name, email, img, password, rpassword } = req.body;
-    if (
-      name.trim() === "" ||
-      email.trim() === "" ||
-      password.trim() === "" ||
-      rpassword.trim() === ""
-    ) {
+    const { name, email, password } = req.body;
+    if (name.trim() === "" || email.trim() === "" || password.trim() === "") {
       res.json({ message: "Заполните все поля!" });
       return;
     }
-    if (password !== rpassword) {
-      res.json({ message: "Пароли не совпадают!" });
-      return;
-    }
-    user = await User.findOne({ where: { name } });
+    user = await User.findOne({ where: { email } });
     if (user) {
       res.json({ message: "Такой пользователь уже есть!" });
       return;
     }
     const hash = await bcrypt.hash(password, 10);
-    user = await User.create({ name, email, password: hash, img });
+    user = await User.create({ name, email, password: hash, score: 0 });
 
     const { accessToken, refreshToken } = generateTokens({
-      user: { id: user.id, name: user.name, img: user.img, email: user.email },
+      user: { id: user.id },
     });
 
     // устанавливаем куки
@@ -77,10 +68,19 @@ router.post("/sign-up", async (req, res) => {
       httpOnly: true,
     });
 
-    res.json({ message: "успешно" });
+    res.json({ message: "успешно", user });
   } catch ({ message }) {
     res.json({ message });
   }
+});
+
+router.get("/check", async (req, res) => {
+  if (res.locals.user) {
+    const user = await User.findOne({ where: { id: res.locals.user.id } });
+    res.json({ user });
+    return;
+  }
+  res.json({});
 });
 
 router.get("/logout", (req, res) => {
