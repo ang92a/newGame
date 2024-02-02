@@ -7,17 +7,17 @@ module.exports = {
       "Themes",
       [
         {
-          title: "Об жизни",
+          title: "Кино",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          title: "Об любви",
+          title: "География",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          title: "Об стену",
+          title: "Спорт",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
