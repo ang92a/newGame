@@ -33,8 +33,18 @@ const SignInPage = (): JSX.Element => {
     <div className={style.container}>
       <h1>Вход</h1>
       <form action="#" className={style.formSingIn} onSubmit={onHandleSubmit}>
-        <input type="email" name="email" onChange={(e) => setEmail(e.target.value)} />
-        <input type="text" name="password" onChange={(e) => setPassword(e.target.value)} />
+        <input
+          type="email"
+          name="email"
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="email"
+        />
+        <input
+          type="text"
+          name="password"
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="password"
+        />
         <button className={style.btnSingIn}>Вход</button>
       </form>
     </div>

@@ -4,6 +4,10 @@ export type AuthState = {
   auth: User | undefined;
 };
 
+export type GameState = {
+  game: Theme[];
+};
+
 export type Action =
   | { type: 'game/load'; payload: Theme[] }
   | { type: 'auth/sign-up'; payload: User }

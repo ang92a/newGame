@@ -41,13 +41,26 @@ const SignUpPage = (): JSX.Element => {
     <div className={style.container}>
       <h1 className={style.title}>Регистрация</h1>
       <form action="#" className={style.formSingUp} onSubmit={onHandleSubmit}>
-        <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} />
-        <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input
+          type="text"
+          name="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="name"
+        />
+        <input
+          type="email"
+          name="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="email"
+        />
         <input
           type="text"
           name="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          placeholder="password"
         />
         <button type="submit" className={style.btnSingUp}>
           Авторизация
