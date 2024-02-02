@@ -8,8 +8,9 @@ module.exports = {
       [
         {
           theme_id: 1,
-          question: "Тема Об жизни. Вопрос 1",
-          answer: "aa",
+          question:
+            "Как зовут актёра, сыгравший Джека Доусона, в фильме Титаник?",
+          answer: "Леонардо Ди Каприо",
           price: 100,
           status: true,
           createdAt: new Date(),
@@ -17,8 +18,8 @@ module.exports = {
         },
         {
           theme_id: 1,
-          question: "Тема Об жизни. Вопрос 2",
-          answer: "ab",
+          question: "Кто выиграл больше всего золотых статуэток (Оскар)?",
+          answer: "Уолт Дисней",
           price: 200,
           status: true,
           createdAt: new Date(),
@@ -26,8 +27,8 @@ module.exports = {
         },
         {
           theme_id: 1,
-          question: "Тема Об жизни. Вопрос 3",
-          answer: "ac",
+          question: "Самый кассовый фильм российского производства?",
+          answer: "Чебурашка",
           price: 300,
           status: true,
           createdAt: new Date(),
@@ -35,8 +36,8 @@ module.exports = {
         },
         {
           theme_id: 1,
-          question: "Тема Об жизни. Вопрос 4",
-          answer: "ad",
+          question: "В каком фильме ужасов дебютировал Джонни Депп?",
+          answer: "Кошмар на улице Вязов",
           price: 400,
           status: true,
           createdAt: new Date(),
@@ -44,8 +45,8 @@ module.exports = {
         },
         {
           theme_id: 1,
-          question: "Тема Об жизни. Вопрос 5",
-          answer: "ae",
+          question: "Как назывался самый первый фильм?",
+          answer: "Прибытие поезда на вокзал Ла-Сьота́",
           price: 500,
           status: true,
           createdAt: new Date(),
@@ -53,8 +54,8 @@ module.exports = {
         },
         {
           theme_id: 2,
-          question: "Тема Об любви. Вопрос 1",
-          answer: "ba",
+          question: "Столица Северной Кореи?",
+          answer: "Пхеньян",
           price: 100,
           status: true,
           createdAt: new Date(),
@@ -62,8 +63,8 @@ module.exports = {
         },
         {
           theme_id: 2,
-          question: "Тема Об любви. Вопрос 2",
-          answer: "bb",
+          question: "Самая высокая точка в России это",
+          answer: "Эльбрус",
           price: 200,
           status: true,
           createdAt: new Date(),
@@ -71,8 +72,8 @@ module.exports = {
         },
         {
           theme_id: 2,
-          question: "Тема Об любви. Вопрос 3",
-          answer: "bc",
+          question: "В какой части света находится Россия?",
+          answer: "Между Европой и Азией",
           price: 300,
           status: true,
           createdAt: new Date(),
@@ -80,8 +81,9 @@ module.exports = {
         },
         {
           theme_id: 2,
-          question: "Тема Об любви. Вопрос 4",
-          answer: "bd",
+          question:
+            "Горизонтальный математический угол, отсчитываемый от северного направления меридиана по ходу часовой стрелки до ориентируемой линии это",
+          answer: "Азимут",
           price: 400,
           status: true,
           createdAt: new Date(),
@@ -89,8 +91,8 @@ module.exports = {
         },
         {
           theme_id: 2,
-          question: "Тема Об любви. Вопрос 5",
-          answer: "be",
+          question: "Координаты Эльбрус-Буткемп в Спб",
+          answer: "59 и 30",
           price: 500,
           status: true,
           createdAt: new Date(),
@@ -98,8 +100,8 @@ module.exports = {
         },
         {
           theme_id: 3,
-          question: "Тема Об стол. Вопрос 1",
-          answer: "ca",
+          question: "За какой футбольный клуб болеют в Санкт-Петербурге?",
+          answer: "Зенит",
           price: 100,
           status: true,
           createdAt: new Date(),
@@ -107,8 +109,8 @@ module.exports = {
         },
         {
           theme_id: 3,
-          question: "Тема Об стол. Вопрос 2",
-          answer: "cb",
+          question: "Как зовут самого быстрого человека на планете?",
+          answer: "Усэйн Болт",
           price: 200,
           status: true,
           createdAt: new Date(),
@@ -116,8 +118,8 @@ module.exports = {
         },
         {
           theme_id: 3,
-          question: "Тема Об стол. Вопрос 3",
-          answer: "cc",
+          question: "В какой стране изобрели спорт?",
+          answer: "Греция",
           price: 300,
           status: true,
           createdAt: new Date(),
@@ -125,8 +127,9 @@ module.exports = {
         },
         {
           theme_id: 3,
-          question: "Тема Об стол. Вопрос 4",
-          answer: "cd",
+          question:
+            "Какой баскетбольный клуб стал чемпионом НБА в прошлом году",
+          answer: "Денвер Наггетс",
           price: 400,
           status: true,
           createdAt: new Date(),
@@ -134,8 +137,8 @@ module.exports = {
         },
         {
           theme_id: 3,
-          question: "Тема Об стол. Вопрос 5",
-          answer: "ce",
+          question: "Самый титулованный настольный теннисист",
+          answer: "Ма Линь",
           price: 500,
           status: true,
           createdAt: new Date(),
