@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch, type RootState } from '../redux/store';
 import style from './style/Navbar.module.css';
 
-const Navbar = (): JSX.Element => {
+function Navbar(): JSX.Element {
   const user = useSelector((store: RootState) => store.auth.auth);
 
   const navigate = useNavigate();
@@ -39,6 +39,13 @@ const Navbar = (): JSX.Element => {
                 Выход
               </button>
             </li>
+            <li>
+              <img
+                className={style.logo_logout}
+                src="https://static.vecteezy.com/system/resources/thumbnails/014/767/684/small/logout-or-sign-out-icon-in-flat-style-isolated-on-white-background-illustration-eps-10-vector.jpg"
+                alt="logo-logout"
+              />
+            </li>
           </>
         ) : (
           <>
@@ -58,6 +65,6 @@ const Navbar = (): JSX.Element => {
       <Outlet />
     </div>
   );
-};
+}
 
 export default Navbar;

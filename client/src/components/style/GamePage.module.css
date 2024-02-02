@@ -1,7 +1,8 @@
 .containerGame {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+  align-items: center;
 }
 
 
@@ -24,3 +25,36 @@
 .containerNoCheck:hover {
     border: 1px solid blue
 }
+
+.containerPrice {
+  padding: 20px;
+  border: 1px solid #000;
+}
+
+.containerPrice:hover {
+  color: tomato;
+  border: 1px solid tomato;
+}
+.question_card {
+  color: black;
+  text-align: center;
+  font-size: 30px;
+}
+.btn_card {
+  margin-left: 10px;
+  font-size: 16px;
+  color: #000;
+  background-color: white;
+}
+.btn_card :hover {
+  background: rgba(0, 0, 0, 0);
+  color: #3a7999;
+  box-shadow: inset 0 0 0 3px #3a7999;
+}
+.input_card {
+  height: 33px;
+  width: 300px;
+  background-color: white;
+  color: black;
+}
+
