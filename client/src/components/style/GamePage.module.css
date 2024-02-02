@@ -1,0 +1,15 @@
+.containerGame {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.containerPrice {
+    padding: 20px;
+    border: 1px solid #000;
+}
+
+.containerPrice:hover {
+    color: tomato;
+    border: 1px solid tomato;
+}
