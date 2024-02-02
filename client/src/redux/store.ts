@@ -1,7 +1,7 @@
 import { legacy_createStore as createStore, combineReducers } from 'redux';
 import { useDispatch } from 'react-redux';
 import { authReducers } from './reducers/authReducers';
-// import { gameReducers } from './reducers/gameReducers';
+import { gameReducers } from './reducers/gameReducers';
 
 export const store = createStore(
   combineReducers({
