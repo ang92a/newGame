@@ -25,7 +25,7 @@ function App(): JSX.Element {
     fetch('/api/game/')
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.game);
+        console.log(data.game, 123123);
         dispatch({ type: 'game/load', payload: data.game });
       })
       .catch(console.log);
