@@ -54,6 +54,7 @@ function App(): JSX.Element {
         <Route path="/auth/sign-in" element={<SignInPage />} />
         <Route path="/auth/sign-up" element={<SignUpPage />} />
         <Route path="/game" element={<GamePage getGame={getGame} />} />
+        <Route path="*" element={<h1>404</h1>} />
       </Route>
     </Routes>
   );

@@ -39,13 +39,6 @@ function Navbar(): JSX.Element {
                 Выход
               </button>
             </li>
-            <li>
-              <img
-                className={style.logo_logout}
-                src="https://static.vecteezy.com/system/resources/thumbnails/014/767/684/small/logout-or-sign-out-icon-in-flat-style-isolated-on-white-background-illustration-eps-10-vector.jpg"
-                alt="logo-logout"
-              />
-            </li>
           </>
         ) : (
           <>

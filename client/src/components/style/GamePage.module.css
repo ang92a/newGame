@@ -7,23 +7,23 @@
 
 
 .question_card {
-    color: red;
+  color: red;
 }
 
 .containerCheck {
-    pointer-events: none;
-    padding: 20px;
-    border: 1px solid red
+  pointer-events: none;
+  padding: 20px;
+  border: 1px solid red
 }
 
 .containerNoCheck {
-    padding: 20px;
-    border: 1px solid #000;
+  padding: 20px;
+  border: 1px solid #000;
 }
 
 
 .containerNoCheck:hover {
-    border: 1px solid blue
+  border: 1px solid blue
 }
 
 .containerPrice {
@@ -35,22 +35,26 @@
   color: tomato;
   border: 1px solid tomato;
 }
+
 .question_card {
   color: black;
   text-align: center;
   font-size: 30px;
 }
+
 .btn_card {
   margin-left: 10px;
   font-size: 16px;
   color: #000;
   background-color: white;
 }
+
 .btn_card :hover {
   background: rgba(0, 0, 0, 0);
   color: #3a7999;
   box-shadow: inset 0 0 0 3px #3a7999;
 }
+
 .input_card {
   height: 33px;
   width: 300px;
@@ -58,3 +62,7 @@
   color: black;
 }
 
+
+.themeTitle {
+  width: 85px;
+}
