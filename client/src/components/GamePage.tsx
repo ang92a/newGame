@@ -1,16 +1,28 @@
-import style from './style/GamePage.module.css';
 import { useSelector } from 'react-redux';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Modal from 'react-modal';
-import type { Question } from '../type';
+import style from './style/GamePage.module.css';
+import { Theme, User } from '../type';
 
-function GamePage(): JSX.Element {
+function GamePage({ getGame }: { getGame: () => void }): JSX.Element {
   const game = useSelector((store: RootState) => store.game.game);
+  const theme = useSelector((store: RootState) => store.theme.theme);
+  const user = useSelector((store: RootState) => store.auth.auth);
+
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [userAnswer, setUserAnswer] = useState('');
   const [id, setId] = useState();
-  const [score, setScore] = useState(0);
-  console.log(id, userAnswer, 123456);
+  const [score, setScore] = useState<User['score']>(0);
+
+  useEffect(() => {
+    if (user) {
+      setScore(user.score);
+    }
+  }, [user]);
+
+  useEffect(() => {
+    getGame();
+  }, [score]);
 
   const openModal = (): void => {
     setModalIsOpen(true);
@@ -19,7 +31,7 @@ function GamePage(): JSX.Element {
     setModalIsOpen(false);
   };
   const onHandleSendAnswers = () => {
-    const result = fetch('/api/game/', {
+    fetch('/api/game/', {
       method: 'post',
       headers: {
         'Content-type': 'application/json',
@@ -57,19 +69,23 @@ function GamePage(): JSX.Element {
       </Modal>
       <h1>GamePage</h1>
       <h3>score:{score} </h3>
-      {game.map((el) => (
+      {theme?.map((el) => (
         <div key={el.id} className={style.containerGame}>
           {el.title}
-          {el.Questions.map((el) => (
+          {el.Questions?.map((question) => (
             <div
               onClick={() => {
                 openModal();
-                setId(el.id);
+                setId(question.id);
               }}
-              key={el.id}
-              className={style.containerPrice}
+              key={question.id}
+              className={
+                game?.some((el) => el.question_id === question.id)
+                  ? style.containerCheck
+                  : style.containerNoCheck
+              }
             >
-              {el.price}
+              {question.price}
             </div>
           ))}
         </div>

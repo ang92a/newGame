@@ -7,15 +7,19 @@ import style from './style/Navbar.module.css';
 const Navbar = (): JSX.Element => {
   const user = useSelector((store: RootState) => store.auth.auth);
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
   const handleLogout = (): void => {
     fetch('/api/auth/logout')
       .then((res) => res.json())
       .then((data) => {
-        dispatch({ type: '/auth/logout' });
-        // navigate('/');
+        if (data.message === 'success') {
+          console.log(data);
+
+          dispatch({ type: 'auth/logout' });
+          navigate('/');
+        }
       })
       .catch(console.log);
   };
@@ -31,9 +35,9 @@ const Navbar = (): JSX.Element => {
               </NavLink>
             </li>
             <li onClick={handleLogout}>
-              <NavLink className={style.navLink} to="/">
+              <button type="button" className={style.navLink}>
                 Выход
-              </NavLink>
+              </button>
             </li>
           </>
         ) : (

@@ -12,6 +12,7 @@ export type User = {
 
 export type Question = {
   id: number;
+  theme_id: number;
   question: string;
   answer: string;
   price: number;

@@ -4,15 +4,23 @@
     margin-top: 40px;
 }
 
-.containerPrice {
+
+.question_card {
+    color: red;
+}
+
+.containerCheck {
+    pointer-events: none;
+    padding: 20px;
+    border: 1px solid red
+}
+
+.containerNoCheck {
     padding: 20px;
     border: 1px solid #000;
 }
 
-.containerPrice:hover {
-    color: tomato;
-    border: 1px solid tomato;
-}
-.question_card {
-    color: red;
+
+.containerNoCheck:hover {
+    border: 1px solid blue
 }

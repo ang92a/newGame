@@ -9,33 +9,43 @@ import { Theme } from './type';
 
 import './App.css';
 import { useAppDispatch } from './redux/store';
+import { useSelector } from 'react-redux';
 
 function App(): JSX.Element {
+  const user = useSelector((store: RootState) => store.auth.auth);
+  const theme = useSelector((store: RootState) => store.theme.theme);
   const dispatch = useAppDispatch();
+  console.log(theme);
 
   // функция,которая проверяет юзера
   const checkUser = (): void => {
     fetch('/api/auth/check')
       .then((res) => res.json())
-      .then((data) => dispatch({ type: 'auth/sign-in', payload: data.user }))
+      .then((data) => {
+        dispatch({ type: 'auth/sign-in', payload: data.user });
+      })
       .catch(console.log);
   };
 
-  // функция которая возвращяет все темы
+  // функция которая возвращяет все темы и все вопросы
   const getGame = (): void => {
     fetch('/api/game/')
       .then((res) => res.json())
       .then((data: Theme[]) => {
-        // console.log(data.game, 1111);
+        // console.log(data, 1111);
         dispatch({ type: 'game/load', payload: data.game });
+        dispatch({ type: 'theme/load', payload: data.theme });
       })
       .catch(console.log);
   };
 
   useEffect(() => {
     checkUser();
-    getGame();
   }, []);
+
+  useEffect(() => {
+    getGame();
+  }, [user]);
 
   return (
     <Routes>
@@ -43,7 +53,7 @@ function App(): JSX.Element {
         <Route index element={<WelcomePage />} />
         <Route path="/auth/sign-in" element={<SignInPage />} />
         <Route path="/auth/sign-up" element={<SignUpPage />} />
-        <Route path="/game" element={<GamePage />} />
+        <Route path="/game" element={<GamePage getGame={getGame} />} />
       </Route>
     </Routes>
   );
