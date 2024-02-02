@@ -5,6 +5,27 @@
   align-items: center;
 }
 
+
+.question_card {
+    color: red;
+}
+
+.containerCheck {
+    pointer-events: none;
+    padding: 20px;
+    border: 1px solid red
+}
+
+.containerNoCheck {
+    padding: 20px;
+    border: 1px solid #000;
+}
+
+
+.containerNoCheck:hover {
+    border: 1px solid blue
+}
+
 .containerPrice {
   padding: 20px;
   border: 1px solid #000;
@@ -36,3 +57,4 @@
   background-color: white;
   color: black;
 }
+
