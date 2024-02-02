@@ -4,13 +4,14 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import type { Question } from '../type';
 
-function GamePage(): JSX.Element {
+function GamePage({ question }: { question: Question }): JSX.Element {
   const game = useSelector((store: RootState) => store.game.game);
+  console.log(game, 123123);
+
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [userAnswer, setUserAnswer] = useState('');
   const [id, setId] = useState();
   const [score, setScore] = useState(0);
-  console.log(id, userAnswer, 123456);
 
   const openModal = (): void => {
     setModalIsOpen(true);
@@ -18,7 +19,7 @@ function GamePage(): JSX.Element {
   const closeModal = (): void => {
     setModalIsOpen(false);
   };
-  const onHandleSendAnswers = () => {
+  const onHandleSendAnswers = (): void => {
     const result = fetch('/api/game/', {
       method: 'post',
       headers: {
@@ -37,14 +38,18 @@ function GamePage(): JSX.Element {
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
         <div className={style.question_card}>
           <h4 className="question-title">Тема:</h4>
-          <p className="question-text">текст вопроса:</p>
+          <p className="question-text">
+            {question.question}.Цена:{question.price}
+          </p>
           <input
+            className={style.input_card}
             value={userAnswer}
             placeholder="ваш ответ"
             type="text"
             onChange={(e) => setUserAnswer(e.target.value)}
           />
           <button
+            className={style.btn_card}
             type="button"
             onClick={() => {
               closeModal();
