@@ -1,9 +1,18 @@
-
 .navbarList {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: solid 1px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
-.navbarList>li {
-    list-style: none;
+.navbarList > li {
+  list-style: none;
+  font-size: 45px;
+  text-align: center;
+}
+.logo_logout {
+  margin-top: 15px;
+  margin-right: 20px;
+  width: 50px;
 }
