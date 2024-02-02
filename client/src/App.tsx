@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 
 import './App.css';
 import { useAppDispatch } from './redux/store';
+import { Theme } from './type';
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -24,8 +25,8 @@ function App(): JSX.Element {
   const getGame = (): void => {
     fetch('/api/game/')
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data.game, 123123);
+      .then((data: Theme[]) => {
+        console.log(data.game, 1111);
         dispatch({ type: 'game/load', payload: data.game });
       })
       .catch(console.log);
