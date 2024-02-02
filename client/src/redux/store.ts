@@ -6,7 +6,7 @@ import { authReducers } from './reducers/authReducers';
 export const store = createStore(
   combineReducers({
     auth: authReducers,
-    // game: gameReducers,
+    game: gameReducers,
   }),
 ); // формирование store
 
