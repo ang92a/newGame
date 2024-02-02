@@ -26,7 +26,7 @@ function App(): JSX.Element {
     fetch('/api/game/')
       .then((res) => res.json())
       .then((data: Theme[]) => {
-        console.log(data.game, 1111);
+        // console.log(data.game, 1111);
         dispatch({ type: 'game/load', payload: data.game });
       })
       .catch(console.log);

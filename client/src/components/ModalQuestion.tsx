@@ -29,7 +29,16 @@ function ModalQuestion({ question }: { question: Question }): JSX.Element {
         Открыть модальное окно
       </button>
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
-        {modalContent}
+        <div className="question-card">
+          <h4 className="question-title">Тема:</h4>
+          <p className="question-text">текст вопроса:</p>
+          <input
+            value={userAnswer}
+            placeholder="ваш ответ"
+            type="text"
+            onChange={(e) => setUserAnswer(e.target.value)}
+          />
+        </div>
       </Modal>
     </div>
   );
