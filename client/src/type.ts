@@ -9,3 +9,11 @@ export type User = {
   password: string;
   score: number;
 };
+
+export type Question = {
+  id: number;
+  question: string;
+  answer: string;
+  price: number;
+  status: boolean;
+};

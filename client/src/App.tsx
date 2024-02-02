@@ -5,10 +5,10 @@ import WelcomePage from './components/WelcomePage';
 import SignInPage from './components/SignInPage';
 import SignUpPage from './components/SignUpPage';
 import Navbar from './components/Navbar';
+import { Theme } from './type';
 
 import './App.css';
 import { useAppDispatch } from './redux/store';
-import { Theme } from './type';
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
