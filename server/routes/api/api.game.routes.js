@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   const { id, userAnswer, score } = req.body;
   const question = await Question.findOne({ where: { id: id } });
-  await Question.update({ status: !status }, { where: { id: id } });
+  // await Question.update({ status: !status }, { where: { id: id } });
 
   await Game.create({
     answerUser: userAnswer,
