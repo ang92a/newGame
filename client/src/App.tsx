@@ -5,21 +5,38 @@ import WelcomePage from './components/WelcomePage';
 import SignInPage from './components/SignInPage';
 import SignUpPage from './components/SignUpPage';
 import Navbar from './components/Navbar';
+import { Theme } from './type';
 
 import './App.css';
 import { useAppDispatch } from './redux/store';
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
+
+  // функция,которая проверяет юзера
   const checkUser = (): void => {
     fetch('/api/auth/check')
       .then((res) => res.json())
       .then((data) => dispatch({ type: 'auth/sign-in', payload: data.user }))
       .catch(console.log);
   };
+
+  // функция которая возвращяет все темы
+  const getGame = (): void => {
+    fetch('/api/game/')
+      .then((res) => res.json())
+      .then((data: Theme[]) => {
+        console.log(data.game, 1111);
+        dispatch({ type: 'game/load', payload: data.game });
+      })
+      .catch(console.log);
+  };
+
   useEffect(() => {
     checkUser();
+    getGame();
   }, []);
+
   return (
     <Routes>
       <Route path="/" element={<Navbar />}>

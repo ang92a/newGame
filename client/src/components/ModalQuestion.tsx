@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-modal';
 import type { Question } from '../type';
 
 function ModalQuestion({ question }: { question: Question }): JSX.Element {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
+  const [userAnswer, setUserAnswer] = useState('');
   const openModal = (): void => {
     setModalIsOpen(true);
   };
@@ -14,7 +15,12 @@ function ModalQuestion({ question }: { question: Question }): JSX.Element {
     <div className="question-card">
       <h4 className="question-title">Тема:</h4>
       <p className="question-text">текст вопроса:</p>
-      <p>цена вопроса</p>
+      <input
+        value={userAnswer}
+        placeholder="ваш ответ"
+        type="text"
+        onChange={(e) => setUserAnswer(e.target.value)}
+      />
     </div>
   );
   return (

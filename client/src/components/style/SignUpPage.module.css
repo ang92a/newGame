@@ -10,6 +10,12 @@
     margin: 0 auto;
 }
 
+
+.formSingUp>input {
+    margin-top: 20px;
+    height: 30px;
+}
+
 .btnSingUp {
     background: #d8d3d3;
     margin-top: 20px;
